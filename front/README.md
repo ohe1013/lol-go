@@ -1,6 +1,7 @@
-# lol-go
-lol-go로 백만장자
+# 설치
 
-npm install
+## npm install
 
-npm start
+# 실행
+
+## npm start
