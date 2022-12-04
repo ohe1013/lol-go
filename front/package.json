@@ -9,15 +9,26 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-navigation/material-top-tabs": "^6.4.0",
+    "@react-navigation/native": "^6.0.16",
+    "@react-navigation/native-stack": "^6.9.4",
+    "@react-navigation/stack": "^6.3.7",
     "expo": "~47.0.8",
     "expo-location": "~15.0.1",
     "expo-status-bar": "~1.4.2",
+    "nativewind": "^2.0.11",
     "react": "18.1.0",
     "react-native": "0.70.5",
-    "react-native-localhost": "^1.0.0"
+    "react-native-localhost": "^1.0.0",
+    "react-native-reanimated": "^2.13.0",
+    "react-native-safe-area-context": "4.4.1",
+    "react-native-screens": "~3.18.0",
+    "react-native-tab-view": "^3.3.2",
+    "react-native-webview": "^11.25.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "tailwindcss": "^3.2.4"
   },
   "private": true
 }

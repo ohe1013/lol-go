@@ -1,89 +1,68 @@
-import { StyleSheet, Text, View, ScrollView, Dimensions, ActivityIndicator } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Dimensions, ActivityIndicator, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
 import * as Location from "expo-location";
 import { IonIcons, Fontisto } from "@expo/vector-icons";
 import localhost from "react-native-localhost";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { AntDesign, Entypo } from "@expo/vector-icons";
+
+import Home from "./components/Home";
+import Map from "./components/Map";
+import List from "./components/List";
+import Color from "./constants/Colors";
+import MainTabNavigator from "./navigation/MainTabNavigator";
+
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
+const Stack = createNativeStackNavigator();
+
 export default function App() {
-  const [location, setLocation] = useState();
-  const [ok, setOk] = useState(true);
-  const [name, setName] = useState("롤고대기중");
-  const [days, setDays] = useState([]);
-
-  const API_KEY = "189a274a058fcba23df31b6621b40ed9";
-
-  const icons = {
-    Clouds: "cloudy",
-    Clear: "day-sunny",
-    Atmosphere: "cloudy-gusts",
-    Snow: "snow",
-    Rain: "rains",
-    Drizzle: "rain",
-    Thunderstrom: "lightning",
-  };
-
-  const ask = async () => {
-    const { granted } = await Location.requestForegroundPermissionsAsync();
-    if (!granted) {
-      setOk(false);
-    }
-    const {
-      coords: { latitude, longitude },
-    } = await Location.getCurrentPositionAsync({ accuracy: 5 });
-    const location = await Location.reverseGeocodeAsync({ latitude, longitude }, { useGoogleMaps: false });
-    setName(location[0].country + " " + location[0].district);
-    const response = await fetch(`http://${localhost}:8000/`)
-      .then(function (response) {
-        return response.json();
-      })
-      .catch(function (error) {});
-    console.log("Ssssssss", response.id);
-  };
-  useEffect(() => {
-    ask();
-  }, []);
   return (
-    <View style={styles.container}>
-      <View style={styles.city}>
-        <Text style={styles.cityName}>{name}</Text>
-      </View>
-      <ScrollView pagingEnabled showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={styles.weather}>
-        {days.length === 0 ? (
-          <View style={{ ...styles.day, alignItems: "center" }}>
-            <ActivityIndicator color="white" style={{ marginTop: 10 }}></ActivityIndicator>
-          </View>
-        ) : (
-          days.map((day, index) => (
-            <View key={index} style={styles.day}>
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <Text style={styles.temp}>{parseFloat(day.main.temp).toFixed(1)}</Text>
-                <Fontisto name={icons[day.weather[0].main]} size={30} color="white"></Fontisto>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: Color.light.tint,
+          },
+          headerTintColor: Color.light.background,
+          headerTitleAlign: "left",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      >
+        <Stack.Screen
+          name="Home"
+          component={MainTabNavigator}
+          options={{
+            title: "동네롤고수",
+            headerRight: () => (
+              <View style={{ flexDirection: "row", width: 60, justifyContent: "space-between", marginRight: 10 }}>
+                <AntDesign name="search1" size={24} color="white" />
+                <Entypo name="dots-three-vertical" size={24} color="white" />
               </View>
-              <Text style={styles.description}>{day.weather[0].main}</Text>
-              <Text style={styles.tinyText}>{day.weather[0].description}</Text>
-            </View>
-          ))
-        )}
-      </ScrollView>
-    </View>
+            ),
+          }}
+        />
+        <Stack.Screen name="Map" component={Map} />
+        <Stack.Screen name="List" component={List} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "tomato",
   },
   city: {
     flex: 1.2,
-    backgroundColor: "red",
     justifyContent: "center",
     alignItems: "center",
   },
   cityName: {
-    color: "white",
     fontSize: 48,
     fontWeight: "600",
   },
