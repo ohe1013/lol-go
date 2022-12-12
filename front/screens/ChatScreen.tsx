@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 
 import ChatListItem from "../components/ChatListItem";
+import NewMessageButton from "../components/NewMessageButton";
 
 import chatRooms from "../data/chatRooms";
 

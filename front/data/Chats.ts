@@ -81,7 +81,7 @@ export default {
     {
       id: "m8",
       content: "Good as well, preparing for the stream now.",
-      createdAt: "2020-10-05T14:50:00.000Z",
+      createdAt: "2020-10-05T14:53:00.000Z",
       user: {
         id: "u1",
         name: "Vadim",
@@ -90,7 +90,7 @@ export default {
     {
       id: "m9",
       content: "How is your uni going?",
-      createdAt: "2020-10-06T14:51:00.000Z",
+      createdAt: "2020-10-06T14:53:00.000Z",
       user: {
         id: "u1",
         name: "Vadim",
@@ -99,7 +99,7 @@ export default {
     {
       id: "m10",
       content: "It is a bit tough, as I have 2 specializations. How about yours? Do you enjoy it?",
-      createdAt: "2020-10-07T14:49:00.000Z",
+      createdAt: "2020-10-07T14:43:00.000Z",
       user: {
         id: "u2",
         name: "Lukas",

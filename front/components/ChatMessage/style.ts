@@ -14,10 +14,11 @@ const styles = StyleSheet.create({
   },
   yourMessageBox: {
     borderRadius: 10,
-    padding: 10,
+    paddingVertical: 10,
+    paddingHorizontal:15,
     maxWidth: 300,
     alignSelf: "flex-start",
-    backgroundColor: "#D6D6D6",
+    backgroundColor: "#F1F1F1",
   },
   timeBox: {
     width: "80%",

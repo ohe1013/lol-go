@@ -1,20 +1,20 @@
 
 
 export type User = {
-    id: String;
-    name : String;
-    imageUri: String;
+    id: string;
+    name : string;
+    imageUri: string;
 }
 
 export type Message = {
-    id: String;
+    id: string;
     content : string;
     createdAt: string;
     user:User;
 }
 
 export type ChartRoom ={
-    id: String;
+    id: string;
     users : User[];
     lastMessage: string;
     
