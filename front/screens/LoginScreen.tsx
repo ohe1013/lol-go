@@ -1,84 +1,107 @@
-import { useState } from "react";
-import { StatusBar, View, TextInput, Image, TouchableOpacity, Text, StyleSheet } from "react-native";
-
+import { useContext, useEffect, useRef, useState } from "react";
+import {
+    StatusBar,
+    View,
+    TextInput,
+    Image,
+    TouchableOpacity,
+    Text,
+    StyleSheet,
+    Button,
+} from "react-native";
+import { AuthContext } from "../context/AuthContext";
+import Lottie from "lottie-react-native";
+import { AntDesign } from "@expo/vector-icons";
+import Colors from "../constants/Colors";
 const LoginScreen = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  return (
-    <View style={styles.container}>
-      <StatusBar />
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Email."
-          placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
-        />
-      </View>
-
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Password."
-          placeholderTextColor="#003f5c"
-          secureTextEntry={true}
-          onChangeText={(password) => setPassword(password)}
-        />
-      </View>
-
-      <TouchableOpacity>
-        <Text style={styles.forgot_button}>Forgot Password?</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginBtn}>LOGIN</Text>
-      </TouchableOpacity>
-    </View>
-  );
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const { login, logout } = useContext(AuthContext);
+    const animationRef = useRef<Lottie>(null);
+    useEffect(() => {
+        animationRef.current?.play();
+        animationRef.current?.play(30, 120);
+    }, []);
+    return (
+        <View style={{ height: "100%", width: "100%", backgroundColor: "white" }}>
+            <Lottie
+                ref={animationRef}
+                style={{ marginVertical: 20, width: 200, height: 200, alignSelf: "center" }}
+                source={require("../assets/login-teemo.json")}
+            />
+            <View
+                style={{
+                    flexDirection: "row",
+                    padding: 10,
+                    alignItems: "flex-end",
+                }}
+            >
+                <AntDesign
+                    name="user"
+                    style={{
+                        marginHorizontal: 5,
+                        justifyContent: "center",
+                        alignSelf: "center",
+                    }}
+                    size={24}
+                    color="black"
+                />
+                <TextInput
+                    placeholder="Username"
+                    style={{ width: "100%" }}
+                    value={username}
+                    onChangeText={setUsername}
+                    maxLength={30}
+                ></TextInput>
+            </View>
+            <View
+                style={{
+                    flexDirection: "row",
+                    padding: 10,
+                    alignItems: "flex-end",
+                }}
+            >
+                <AntDesign
+                    name="lock"
+                    style={{
+                        marginHorizontal: 5,
+                        justifyContent: "center",
+                        alignSelf: "center",
+                    }}
+                    size={24}
+                    color="black"
+                />
+                <TextInput
+                    style={{ width: "100%" }}
+                    placeholder="Password"
+                    value={password}
+                    onChangeText={setPassword}
+                    secureTextEntry
+                    maxLength={30}
+                />
+            </View>
+            <TouchableOpacity
+                onPress={() => {
+                    login();
+                }}
+                style={{
+                    backgroundColor: Colors.light.tint,
+                    padding: 20,
+                    borderRadius: 10,
+                }}
+            >
+                <Text
+                    style={{
+                        textAlign: "center",
+                        fontWeight: "700",
+                        fontSize: 16,
+                        color: "#fff",
+                    }}
+                >
+                    Login
+                </Text>
+            </TouchableOpacity>
+        </View>
+    );
 };
 export default LoginScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  image: {
-    marginBottom: 40,
-  },
-
-  inputView: {
-    backgroundColor: "#FFC0CB",
-    borderRadius: 30,
-    width: "70%",
-    height: 45,
-    marginBottom: 20,
-
-    alignItems: "center",
-  },
-
-  TextInput: {
-    height: 50,
-    flex: 1,
-    padding: 10,
-    marginLeft: 20,
-  },
-
-  forgot_button: {
-    height: 30,
-    marginBottom: 30,
-  },
-
-  loginBtn: {
-    width: "80%",
-    borderRadius: 25,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 40,
-    backgroundColor: "#FF1493",
-  },
-});

@@ -1,0 +1,12 @@
+[
+    {
+    "success": true,
+    "statusCode": 200,
+    "code":"jwt_auth_valid_credential",
+    "message":"Credential is valid",
+    "data" : {
+        "token": "sdnlflsdfnlasdnfklasdnlkfnsdlkfnlk",
+        "id":"1"
+        }   
+    }
+]
