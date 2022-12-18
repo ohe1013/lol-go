@@ -2,3 +2,5 @@
 node_modules
 lol-go.code**
 .env
+.venv
+__pycache__
