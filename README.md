@@ -16,15 +16,12 @@
 
 이걸 용돈벌이 수단, 친목 수단, 선생님이 되어보는 자아 실현 수단, 이성 교제까지 시켜줄 수 있는 앱이 될 수 있을 것이라 생각했습니다!
 
-![KakaoTalk_20231103_195458338_05.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/c25eb7fa-fce5-4067-a2c4-bec8874fa401/c6a45690-056d-4203-94cb-194778c962c7/KakaoTalk_20231103_195458338_05.jpg)
+![KakaoTalk_20231103_195458338_05](https://github.com/ohe1013/lol-go/assets/84114149/c5f97534-a74f-4926-ac6b-af5ff541b092)
+![KakaoTalk_20231103_195458338_04](https://github.com/ohe1013/lol-go/assets/84114149/4ad02a07-0e6e-405d-bf5f-58e66406f298)
+![KakaoTalk_20231103_195458338_03](https://github.com/ohe1013/lol-go/assets/84114149/03f9dc2f-7cff-4034-b6ac-a62abd923b1a)
+![KakaoTalk_20231103_195458338_02](https://github.com/ohe1013/lol-go/assets/84114149/87fbbeb6-4583-4f03-9395-67548eb5566c)
+![KakaoTalk_20231103_195458338_01](https://github.com/ohe1013/lol-go/assets/84114149/4753c636-9f42-46d6-9861-3ed1ade115e8)
 
-![KakaoTalk_20231103_195458338_03.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/c25eb7fa-fce5-4067-a2c4-bec8874fa401/d0b3d1e0-0ebd-4ea5-91e2-a81fbebaaa38/KakaoTalk_20231103_195458338_03.jpg)
-
-![KakaoTalk_20231103_195458338_04.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/c25eb7fa-fce5-4067-a2c4-bec8874fa401/e7036991-4fe2-493b-86c5-7931086ad5ea/KakaoTalk_20231103_195458338_04.jpg)
-
-![KakaoTalk_20231103_195458338_02.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/c25eb7fa-fce5-4067-a2c4-bec8874fa401/42a61aee-30b6-4ddf-850d-1987e5e71aaa/KakaoTalk_20231103_195458338_02.jpg)
-
-![KakaoTalk_20231103_195458338_01.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/c25eb7fa-fce5-4067-a2c4-bec8874fa401/110f6df2-990c-48b1-a2ab-bc262a881003/KakaoTalk_20231103_195458338_01.jpg)
 
 `Expo framework`로 개발을 진행했습니다.
 
