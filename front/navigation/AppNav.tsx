@@ -6,11 +6,11 @@ import AppStack from "./AppStack";
 import AuthStack from "./AuthStack";
 
 export const AppNav = () => {
-    const { isLogin, userToken } = useContext(AuthContext);
-    return (
-        <NavigationContainer>
-            {isLogin === true && <ActivityIndicator size={"large"} />}
-            {isLogin === false && userToken !== null ? <AppStack /> : <AuthStack />}
-        </NavigationContainer>
-    );
+  const { isLogin, userToken } = useContext(AuthContext);
+  return (
+    <NavigationContainer>
+      {isLogin === true && <ActivityIndicator size={"large"} />}
+      {isLogin === false && userToken == null ? <AppStack /> : <AuthStack />}
+    </NavigationContainer>
+  );
 };
